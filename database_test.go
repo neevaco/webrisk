@@ -29,8 +29,8 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/google/webrisk/internal/webrisk_proto"
 	pt "github.com/golang/protobuf/ptypes"
+	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
 )
 
 func mustGetTempFile(t *testing.T) string {

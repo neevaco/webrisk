@@ -25,8 +25,8 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/google/webrisk/internal/webrisk_proto"
 	pt "github.com/golang/protobuf/ptypes"
+	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
 )
 
 // jitter is the maximum amount of time that we expect an API list update to
