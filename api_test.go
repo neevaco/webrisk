@@ -21,9 +21,9 @@ import (
 	"reflect"
 	"testing"
 
+	pb "github.com/google/webrisk/internal/webrisk_proto"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
 )
 
 type mockAPI struct {
@@ -55,36 +55,36 @@ func TestNetAPI(t *testing.T) {
 		var err error
 		marshaler := jsonpb.Marshaler{}
 		for key, value := range r.URL.Query() {
-			if key == "threat_type" {
-				if len(value) == 0 {
+			if (key == "threat_type") {
+				if (len(value) == 0) {
 					t.Fatalf("missing value for key: %v", key)
 				}
 				gotReqThreatType = pb.ThreatType(pb.ThreatType_value[value[0]])
-			} else if key == "constraints.supported_compressions" {
-				if len(value) == 0 {
+			} else if (key == "constraints.supported_compressions") {
+				if (len(value) == 0) {
 					t.Fatalf("missing value for key: %v", key)
 				}
 				for _, comp := range value {
 					gotReqCompressionTypes = append(gotReqCompressionTypes,
 						pb.CompressionType(pb.CompressionType_value[comp]))
 				}
-			} else if key == "hash_prefix" {
-				if len(value) == 0 {
+			} else if (key == "hash_prefix") {
+				if (len(value) == 0) {
 					t.Fatalf("missing value for key: %v", key)
 				}
 				gotReqHashPrefix, err = base64.StdEncoding.DecodeString(value[0])
-				if err != nil {
+				if (err != nil) {
 					t.Fatalf("unexpected hash prefix decoding error for: %v", value[0])
 				}
-			} else if key == "threat_types" {
-				if len(value) == 0 {
+			} else if (key == "threat_types") {
+				if (len(value) == 0) {
 					t.Fatalf("missing value for key: %v", key)
 				}
 				for _, threat := range value {
 					gotReqThreatTypes = append(gotReqThreatTypes,
 						pb.ThreatType(pb.ThreatType_value[threat]))
 				}
-			} else if key != "key" {
+			} else if (key != "key") {
 				t.Fatalf("unexpected request param error for key: %v", key)
 			}
 		}
@@ -113,8 +113,8 @@ func TestNetAPI(t *testing.T) {
 			RawIndices: &pb.RawIndices{Indices: []int32{1, 2, 3}},
 		},
 	}
-	resp1, err := api.ListUpdate(context.Background(), wantReqThreatType, []byte{},
-		wantReqCompressionTypes)
+	resp1, err := api.ListUpdate(context.Background(), wantReqThreatType, []byte {},
+	    wantReqCompressionTypes)
 	gotResp = resp1
 	if err != nil {
 		t.Errorf("unexpected ListUpdate error: %v", err)

@@ -76,7 +76,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
+	pb "github.com/google/webrisk/internal/webrisk_proto"
 )
 
 const (

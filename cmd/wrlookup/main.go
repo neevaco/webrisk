@@ -33,9 +33,8 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/google/webrisk"
 	"os"
-
-	"github.com/neevaco/webrisk"
 )
 
 var (

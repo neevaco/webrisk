@@ -23,8 +23,8 @@ import (
 	"sync"
 	"testing"
 
+	pb "github.com/google/webrisk/internal/webrisk_proto"
 	"github.com/golang/protobuf/proto"
-	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
 )
 
 var (

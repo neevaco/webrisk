@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
+	pb "github.com/google/webrisk/internal/webrisk_proto"
 )
 
 // The system tests below are non-deterministic and operate by performing
