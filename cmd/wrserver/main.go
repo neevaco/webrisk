@@ -198,12 +198,12 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/google/webrisk"
-	pb "github.com/google/webrisk/internal/webrisk_proto"
+	"github.com/neevaco/webrisk"
+	pb "github.com/neevaco/webrisk/internal/webrisk_proto"
 
-	_ "github.com/google/webrisk/cmd/wrserver/statik"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
+	_ "github.com/neevaco/webrisk/cmd/wrserver/statik"
 	"github.com/rakyll/statik/fs"
 )
 
